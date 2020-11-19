@@ -14,6 +14,9 @@ Elementos necesarios:
 * Realizar configuración del database yml (Se elimino el versionamiento orignal de archivo por seguridad)
     - Se añade ejemplo database.yml~
 
+    - Para el funcionamiento del proyecto se hace uso de Mysql.
+        https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04-es
+
 * Ejucución de los siguientes comandos para la base de datos: 
 
      `rake db:create`
