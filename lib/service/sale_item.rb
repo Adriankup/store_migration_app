@@ -7,7 +7,7 @@ class Service::SaleItem
     @item_description = row['descripcion del item']
     @item_price = row['precio del item']
     @quantity = row['total de items']
-    @seller_address = row['direccion ded vendedor']
+    @seller_address = row['direccion de vendedor']
     @seller = row['vendedor']
   end
 

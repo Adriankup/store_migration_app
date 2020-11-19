@@ -25,7 +25,7 @@ class SalesController < ApplicationController
   def destroy
     respond_to do |format|
       @sale.destroy
-      format.html { redirect_to sales_path, notice: "#{t('controller.destroyed')}" }
+      format.html { redirect_to sales_path, notice: t('controller.destroyed') }
     rescue StandardError => e
       format.html { redirect_to sales_path, alert: e.message }
     end
