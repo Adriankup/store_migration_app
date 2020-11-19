@@ -1,0 +1,41 @@
+<%= form_for @sale, local: true do |f| %>
+<div class="row">
+    <div class="col-md-12">
+        <% flash.each do |type, msg| %>
+        <div>
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                Ocurrió un error al procesar la información: <%= msg %>
+            </div>
+
+        </div>
+        <% end %>
+        
+        <% if @sale.errors.full_messages.size > 0 %>
+        <div class="alert alert-danger" role="alert">
+            <h3> Ocurrieron los siguientes errores al procesar la información: </h3>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <ul>
+                <% @sale.errors.full_messages.each do |message|%>
+                <li><%=  message %></li>
+                <%end%>
+            </ul>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+        <% end %>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <%= f.label :file, "Archivo", class: 'control-label' %><br />
+            <%= f.file_field :file, class: 'form-control' %>
+        </div>
+    </div>
+    <div class="col-md-12 text-right">
+        <%= link_to "Atras", sales_path , class: "btn btn-danger"%>
+        <%= f.button "Guardar".html_safe, type: :submit, data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Guardando..." }, class: 'btn btn-primary' %>
+    </div>
+</div>
+
+
+
+<% end %>
