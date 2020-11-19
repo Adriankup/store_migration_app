@@ -2,5 +2,5 @@
 
 class Sale < ApplicationRecord
   attr_accessor :file
-  has_many :sale_items
+  has_many :sale_items, dependent: :destroy
 end

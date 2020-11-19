@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root 'sales#index'
 
-  resources :sales, only: %i[index new create]
+  resources :sales, only: %i[index new create show destroy]
 end
