@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :sale do
-    amount { "9.99" }
+    amount { 12.22 }
   end
 end
