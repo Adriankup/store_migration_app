@@ -33,4 +33,4 @@ en:
   controller:
     created: La venta ha sido creada exitosamente
     updated: La venta ha sido actualizada exitosamente
-    destroyed: La vida ha sido eliminado exitosamente
+    destroyed: La venta ha sido eliminada exitosamente

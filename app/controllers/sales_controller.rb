@@ -1,5 +1,11 @@
 class SalesController < ApplicationController
-  def index; end
+
+  before_action :set_sale, only: %i[show destroy]
+
+
+  def index
+    @sales = Sale.all
+  end
 
   def new
     @sale = Sale.new
@@ -14,6 +20,17 @@ class SalesController < ApplicationController
     end
   end
 
+  def show; end
+
+  def destroy
+    respond_to do |format|
+      @sale.destroy
+      format.html { redirect_to sales_path, notice: "#{t('controller.destroyed')}" }
+    rescue StandardError => e
+      format.html { redirect_to sales_path, alert: e.message }
+    end
+  end
+
   private
 
   def sale_params
@@ -22,5 +39,9 @@ class SalesController < ApplicationController
 
   def importation_service
     @importation_service ||= Service::Importation.new
+  end
+
+  def set_sale
+    @sale = Sale.find(params[:id])
   end
 end

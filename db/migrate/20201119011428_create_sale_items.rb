@@ -7,7 +7,7 @@ class CreateSaleItems < ActiveRecord::Migration[6.0]
       t.references :product, null: false, foreign_key: true
       t.references :seller, null: false, foreign_key: true
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
